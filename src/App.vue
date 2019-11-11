@@ -1,28 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <div class="content">
+          <img src="./assets/logo.png" alt="Logo" id="logo">
+          <formsend></formsend>
+          <p class="footer">THIS IS JUS A FRONT-END TEST <br> FOR GREENHORSEGAMES</p>
+      </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import './assets/style.css'
+import formsend from './components/FormSend.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    formsend
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

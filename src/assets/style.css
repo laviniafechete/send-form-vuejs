@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+}
+#app {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../assets/bg.jpg");
+    background-size: cover;
+}
+.content {
+    width: 100%;
+    max-width: 800px;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+.footer {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+}
+#logo {
+  display: block;
+  margin: 0 auto;
+  padding-top: 120px;
+}
+form {
+  width: 100%;
+  max-width: 600px;
+  margin: 83px auto 0;
+  display: block;
+}
+.responsive {
+  display: grid;
+  grid-gap: 0 4px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.inputErrorName, .inputErrorEmail, .inputErrorMessage {
+  position: relative;
+}
+.hiddenClas {
+  display: none;
+}
+.inputErrorMessage {
+  margin-top: 4px;
+}
+#name,
+#email {
+  width: 100%;
+  margin-top: 4px;
+  height: 48px;
+  border: none;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #333!important;
+  justify-content: space-between;
+}
+#message {
+    width: 100%;
+    max-width: 600px;
+    height: 135px;
+    border: none;
+    resize: none;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #333!important;
+}
+::placeholder {
+    color: #999999;
+    text-transform: uppercase;
+}
+#submit {
+    width: 218px;
+    height: 49px;
+    border-radius: 10px;
+    background-color: #1085ca;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: none;
+    display: block;
+    margin: 12px auto 0;
+}
+.error {
+  background-color: #f52020;
+  position: absolute;
+  border-radius: 5px;
+  padding: 10px 26px;
+  color: #fff;
+  top: -24px;
+  right: -40px;
+  z-index: 1;
+}
+.inputErrorName p::before, .inputErrorEmail p::before, .inputErrorMessage p::before {
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: #f52020 transparent transparent transparent;
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.inputErrorName p::after, .inputErrorEmail p::after, .inputErrorMessage p::after {
+  border-radius: 50%;
+    display: block;
+    content: "x";
+    width: 17px;
+    height: 17px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #000;
+    background-color: red;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    line-height: 17px;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#finalMessage {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 83px;
+}
