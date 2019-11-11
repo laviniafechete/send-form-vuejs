@@ -6,30 +6,32 @@
 }
 #app {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("../assets/bg.jpg");
     background-size: cover;
 }
 .content {
     width: 100%;
     max-width: 800px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgba(255, 255, 255, 0.8);
     display: block;
     margin: 0 auto;
     position: relative;
 }
 .footer {
-  position: absolute;
   text-align: center;
+  position: absolute;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 10px;
 }
 #logo {
   display: block;
-  margin: 0 auto;
-  padding-top: 120px;
+    margin: 0 auto;
+    max-width: 286px;
+    width: 100%;
+    padding-top: 120px;
 }
 form {
   width: 100%;
@@ -42,13 +44,10 @@ form {
   grid-gap: 0 4px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-.inputErrorName, .inputErrorEmail, .inputErrorMessage {
+.inputName, .inputEmail, .inputMessage {
   position: relative;
 }
-.hiddenClas {
-  display: none;
-}
-.inputErrorMessage {
+.inputMessage {
   margin-top: 4px;
 }
 #name,
@@ -95,10 +94,10 @@ form {
   padding: 10px 26px;
   color: #fff;
   top: -24px;
-  right: -40px;
+  right: -33px;
   z-index: 1;
 }
-.inputErrorName p::before, .inputErrorEmail p::before, .inputErrorMessage p::before {
+.error::before {
   display: block;
   content: "";
   width: 0;
@@ -108,10 +107,9 @@ form {
   border-color: #f52020 transparent transparent transparent;
   position: absolute;
   bottom: -7px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 45px
 }
-.inputErrorName p::after, .inputErrorEmail p::after, .inputErrorMessage p::after {
+.error::after {
   border-radius: 50%;
     display: block;
     content: "x";
@@ -123,12 +121,13 @@ form {
     background-color: red;
     position: absolute;
     bottom: -30px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
+    right: 46px;
     line-height: 17px;
     font-weight: bold;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#errormessage{
+    top: 0;
 }
 #finalMessage {
   text-align: center;
@@ -136,4 +135,12 @@ form {
   font-weight: bold;
   text-transform: uppercase;
   margin-top: 83px;
+}
+@media (max-width: 800px) {
+  .error {
+    right: 0;
+  }
+  .content {
+    padding-bottom: 70px;
+  }
 }
